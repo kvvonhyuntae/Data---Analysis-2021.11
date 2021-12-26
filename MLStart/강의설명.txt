@@ -1,0 +1,843 @@
+파이썬 설치
+
+1. basic python 설치 + 소요 라이브러리
+2. anaconda
+
+파이썬 버전
+1. 2.x : 과거
+2. 3.x : 발전
+ - 3.5 ~ 3.8 | 3.9
+ - 최신 3.8.x
+ - 안정 3.7.x
+
+프로그래밍 언어
+1. 문법
+2. 해석기(인터프리터)
+3. 콘솔: 입력과 출력을 표시
+
+
+출력결과의 이해
+- <class 'int'>: int라는 클래스의 인스턴스
+ . 클래스는 인스턴스 찍어내는 틀. 인간
+ . 클래스의 생성자함수가 존재. 클래스의 이름과 동일
+ . 인스턴스는 메모리에 생성된 그릇. 권오성
+
+클래스와 인스턴스의 이해
+- 권오성이라는 인간을 어떻게 만들것이냐?
+ . 이름: 권오성, 나이:23, 성별:남
+ . 인간(이름='권오성', 나이=23, 성별='남')
+ . 인간('권오성', 23, '남')
+ . 인간('권오성', 성별='남', 나이=23)
+
+용어정의
+- 클래스: 특정 연산규칙이 적용되는 파이썬 객체의 정의
+- 생성자함수: 인스턴스를 주어진 규칙에 따라 생성하는 함수
+- 인스턴스: 특정 연산규칙이 적용되는 파이썬 객체.
+  메모리에 존재(instance)
+
+
+파이썬이란 무엇인가?
+. 컴퓨터 언어, 프로그래밍 언어
+. 범용 언어의 특징을 가지며 교육용 목적
+ - 많은 소스, 라이브러리, 패키지
+ - 가져다 쓸 수 있는 도구가 많다
+ - 핫한 비지니스 목적에 대한 알고리즘
+. 스크립트 언어: 속도가 느리다.
+. 비즈니스 현장에서는 [c, java, ]python
+
+프로그래밍이란?
+- 로직: 사람의 생각을 컴퓨터가 수행할 수 있도록 만들어진 규칙들의 조합
+- 말 -> 번역 -> 01기계어로 전달
+- 언어: 파이썬, 자바, c
+- 효율적: 좋은 프로그래밍과 나쁜 프로그래밍
+ . 어느정도는 사람의 말을 좋은 규칙으로 표현해내야 하고,
+ . 컴퓨터의 원리에 의해서 의도된 대로 동작할 수 있도록 해줘야 한다.
+- numpy array like-operation
+ . 중간결과를 생산하지 않고, 직접적인 결과를 가져올 수 있도록
+ . 반복적인 연산을 제거하여, 한버에 연산이 이뤄지도록 작업
+
+데이터분석/ 인공지능
+- 데이터는 사실/진실의 현상/증거
+- 분석은 사실의 패턴을 밝히고, 진실에 접근
+- 데이터 = 신호 + 소음
+- 일반화할 수 있는 사실을 찾는 일
+ . 소음을 배제하고 신호를 찾아서 일반화할 수 있는 rule을 만들고자 한다.
+ . 인공지능
+- 지침
+ . 데이터의 스케일을 동등하게 하자.
+ . 가급적으로 수치로 표현하자
+ . 지도학습과 비지도학습
+ . 지도학습: 값을 찾는 회귀, (순서가없는)카테고리에 대한 분류, 서열에 대한 분류
+ . Regression / classification / ranking
+- 데이터분석에 대한 절차
+ . 분석목적/대상 선정
+ . 분석기획
+ . 데이터 수집/적재/저장
+ . 추출/변환/생성 = array
+ . 모델링
+ . 평가 / 튜닝
+ . 운영 / 서비스
+ . 모니터닝
+
+데이터 담는 그릇
+
+
+프로그래밍이란?
+데이터분석, 인공지능이란?
+데이터를 담는 그릇:
+- 컨테이너 객체: 리스트, 튜플, 사전, 집합
+- numpy array
+- array 특징: 색인, 차원, shape, dtype, 연산에서 broadcating, axis
+- universal 함수
+- DataFrame, Series
+- DataFrmae, Series와 관련된 연산
+
+array, DataFrame, Series가 입력으로서 머신러닝에 활용
+
+
+추가적인 기능 제공
+- 라이브러리: 큰 패키지
+- 패키지: 큰 모듈
+- 모듈: 여러가지 기능을 모아둔 파이썬 객체.
+
+모듈 사용방법
+1. 설치 (pip install modulename)
+ . 시스템 명령어
+ . 윈도우 프롬프르에서 수행
+2. 불러오기(import modulname)
+ . 파이썬 객체를 메모리에 올리는 작업
+ . 파이썬 인터프리터 상에서 수행
+
+파이썬 프로그래밍하기
+1. 파이썬의 문법을 배우고
+2. 파이썬이 제공하는 클래스와 함수의 사용법을 익혀서
+3. 내가 가지는 데이터에 적용하여
+4. 원하는 결과를 얻는 것.
+
+색인: 0부터 색인의 순서가 부여됨
+1. 점색인: s[0], s[3]
+2. 연속색인: 
+ . s[start:end] start는 포함. end는 포함되지 않음
+ . start가 생략되면 0을 의미한다.
+ . end가 생략되면 끝까지를 의미한다.
+ . s[start:end:(-)step] -는 반대방향을 의미
+3. 불연속색인:
+
+문자열 다루기:
+1. 포매팅
+2. 색인
+3. 문자열 처리 함수
+
+python basic composite type
+1. tuple
+ . ()로 여러 데이터를 묶습니다.
+ . 한번 묶으면, 빼거나 더하거나, 바꿀 수 없다. => 불변(immutable)
+ . 고정된 data로 활용. 수정작업에 효율적
+ . 색인: 점색인, 연속색인
+2. list
+ . []로 여러 데이터를 묶습니다.
+ . append: 끝에 하나의 성분을 추가하는 함수
+ . extend: 끝에 리스트(여러개의 성분)을 추가
+ . insert: 특정 위치에 하나의 성분을 추가
+ . sort: list 자체를 오름차순으로 정렬
+ . reverse: list의 순서를 바꾼 리스트를 생성
+ . pop: 맨 마지막 위치의 값을 빼서 리턴
+ . remove: 특정 위치의 값을 빼기만 한다.
+ . 색인의 의한 대입
+   - 점색인에 대한 대입: 값의 변경이 발생
+   - 연속색인에 대한 대입: 값의 변경이 발생
+   - 연속색인에 대한 점색인의 대입: 값 변경이 않된다.
+3. dict
+ . {}로 여러 데이터를 묶는다.
+ . {k1:v1, k2:v2, ...}
+ . 하나의 dict 내에서 k는 유일
+ . k는 v에 접근하는 열쇠
+ . l[3] 반면에 d['k']로 v에 접근한다.
+ . d.keys(), d.values(), d.items()
+ . d['newKey'] = newValue
+ . d['oldKey'] = newValue
+ . 이름이 있는 데이터에 대한 저장소
+ . 순서가 없다.
+4. set
+ . 수학의 집합과 같고, 각 원소는 유일
+ . {1, 2, 3} U {1, 4} = {1, 2, 3, 4}
+ . dict의 k의 저장소로 사용
+ . 수학의 집합 연산을 제공
+   - 교집합, 합집합, 차집합, XOR집합, 포함관계
+5. 특징
+ . 성분에 대한 type 제한이 없기 때문에, 메모리에 불연속적으로 산재
+ . 일괄연산이 불가능하고, 반복연산을 수행하기 때문에 속도가 느림
+ . 대용량 데이터를 다루는 데는 적합하지 않다. 임시적 데이터를 다룰 때 사용
+ . 대용량 데이터를 다루기 위해서는 메모리 효율적이고 속도가 빨라야 함.
+
+## numpy
+numeric python : 수치를 다루는 파이썬 패키지
+array 배열
+- list 나열: 우리집에는 사과, 배, 양파, 무우, ...
+[ 사과, 딸기, 무우,     양파]
+[      배,   수박,  호박, ]
+[   ...    ....     ....]
+ . 있는 것을 판매하고 싶어하는 순으로 이름을 열거
+- 배열: 실제 상품이 진열된 순서를 의미
+ . 사과, 딸기, 무우, 양파, 배, 수박, 호박 순서대로 위치
+ . 식료품라는 클래스의 객체들, 인스턴스들
+ . 메모리상에 위 순서대로 위치해 있다.
+   [사과|딸기|무우|양파|배 |수박|호박]
+- 연속해서 위치하는 데 그 사이즈가 다르면 
+ . 중간을 읽기 위해서는 처음부터 다 읽어야 한다.
+ . 읽는 속도가 매우 느리겠죠.
+ . 중간을 쓰기 위해서도 처음부터 다 읽어야 한다.
+ . 각 성분들에 대한 연산 처리는 for문을 통해야 한다.
+
+ for i in len(l):
+     l[i] = l[i] + 1
+
+- 연속해서 위해서는 데 그 사이즈가 다 같으면
+ . 각 단위의 사이즈가 4Byte라면
+ . 양파을 읽기 위해 3*4Byte를 건너뛰고 읽어면 된다.
+ . 읽고 쓰기 효율이 높아진다.
+- numpy array는 
+ . 동일한 타입(사이즈)의 객체들을 연속된 메모리공간에 배열한것
+ . 객체들에 접근할 때, 순서에 따라 한번에 접근하고, 처리한다.
+ . 성분들에 대한 연산을 한번에 수행할 수 있다.
+ arr = np.array([1,2,3])
+ arr = arr + 1
+ . numpy array는 파이썬에서 데이터분석을 위한 데이터포맷이다.
+
+- numpy array를 둘러싼 생태계
+ . 데이터는 numpy
+ . 시각화 matplotlib, bokeh, seaborn는 array로 시각화
+ . 과학기술연산에 필요한 함수 scipy도 array 데이터로 사용
+ . 통계처리를 하기 위한 statmodels도 array 데이터로 사용
+ . 데이터 전처리, 데이터 기술적 분석에 사용되는 pandas의 데이터는 DataFrame
+   - DF = array + schema
+   - DF 멤버: value(array), index, columns
+     구분 이름 나이 성별
+      1  권오성 23  M
+      2  최정윤 21  F
+      3  홍길동 45  M
+ . python machine learning F/W로 사용되는 scikit-learn
+   -sklearn의 입력 데이터의 포맷 역시 array
+ . 딥러닝을 위한 F/W인 tensorflow, pytorch는 tensor 데이터
+   - tensor는 array로 생성하고
+   - array의 연산규칙을 거의 따르고 있다.
+
+#### array summary
+arr의 속성
+- arr.dtype: int32, float64, object
+- arr.ndim: vector(1), matrix(2), tensor(3~)
+- arr.shape: (6,), (2,3), (3,2), (1,6), (6,1), (1,2,3)
+- arr.size: 6, 2*3, 3*2, 1*6, 6*1, 1*2*3 - 성분의 수
+
+arr의 색인: 일부의 성분의 추출하는 작업
+- 점색인(point indexing): arr[i], arr[i,j], arr[i,j,k], arr[:,j]
+  . 점색인 된 차원이 축소된다.
+- 연속색인(slicing): arr[s:e:-b], arr[10:1:-3], arr[1:10:3]
+  . 1d: arr[:], arr[0:], arr[0:-1], arr[:j], arr[i:], arr[i:j], arr[i:j:(-)k]
+  . 2d: arr[i:j,n:m], arr[i,n:m], arr[i:j,n], arr[i:j:(-)k,n], arr[i,n:m:(-)l]
+        arr[i] == arr[i,:], arr[i:j] == arr[i:j,:]
+  . 3d: arr[i:j,n:m,s:t], arr[i,n,s:t] 
+        arr[i:j] == arr[i:j,:,:], arr[i:j,n:m] == arr[i:j,n:m,:]
+  . 연속색인한 축의 차원은 축소되지 않는다.
+  . size가 줄어든다.
+  . oneDarr[i:j].size == j-i
+- 불연속색인(fancy indexing): arr[[i, j]]. 점색인을 여러번하는 것
+  . 1d: arr[[i,j,k]]
+  . 2d: arr[i, [n,m]], arr[i:, [n,m]], arr[[i,j], n], arr[[i,j]]
+        arr[[i,j,k],[n,m,m]]: pairwise point indexing
+        = np.array([arr[i,n], arr[j,m]])
+  . 3d: arr[[i,j],n,[s,t]], arr[[i,j],n:,[s,t]], arr[[i,j]] == arr[[i,j],:,:]
+        arr[[i,j],[n,m],[s,t]]: pairwise point indexing
+        = np.array([arr[i,n,s], arr[j,m,t]])
+        
+[Quiz] 색인결과의 shape solution. arr3d.shape = (l,m,n)
+- arr3d[i] => (m,n)
+- arr3d[i:j] => (j-i,m,n)
+- arr3d[:j] => (j,m,n)
+- arr3d[i:] => (l-i,m,n)
+- arr3d[:-j] => (l-j,m,n)
+- arr3d[:, i] => (l,n)
+- arr3d[:, i:j] => (l,j-i,n)
+- arr3d[0, i:j] => (j-i,n)
+- arr3d[:, :, i] => (l,m)
+- arr3d[:, :, i:j] => (l,m,j-i)
+- arr3d[1, :, i] => (m,)
+- arr3d[1, :, i:j] => (m,j-i)
+- arr3d[1, 2:, i] => (m-2,)
+- arr3d[1, 2, i:j] => (j-i,)
+- arr3d[:, 2, i] => (l,)
+- arr3d[:, 2, i:j] => (l,j-i)
+
+array a의 메소드:
+- 타입변경: a.astype('float')
+- 평균 등: a.mean(), a.max(), a.min(), a.median(), a.std(), a.quantile(), a.sum()
+- 정렬, 유일: a.sort(), a.unique()
+
+array universal fn: np.fname(arr)
+- 산술연산: add, subtract, multiply, devide
+- 평균 등: mean, ....
+- 수학연산: exp, log, log10, log2, log1p, sin, tanh, arcsin, ...
+- shape 관련함수: reshape, transpose(i,k,j), swapaxes(i,k)
+- dtype: astype
+- array 생성: array, asarray, ones, zeros, oneslike, empty, arange, linspace
+- random 샘플링 모듈: random, randn, randint, randu, ..., seed, shuffle
+
+## 시각화
+matplotlib : matlab plot library
+- figure: 캔바스의 사이즈가 그려질 그림의 크기를 결정
+- ax, axes: 하나의 도화지, 여러개의 도화지
+matplotlib echo packages: seaborn, bokeh
+
+## pandas
+수집된 데이터를 정재, 추출, 변환, 탐색, 시각화하는 용도로 사용. 
+데이터분석의 70%를 여기서 할애합니다. 퇴근이 빠르다.
+- 데이터 수집/변환/탐색 ... pandas, sql, crawling, re
+
+주요 내용
+- 데이터 객체인 DataFrame, Series, index, columns 다루고
+- pd.get_dummies, to_XXX, melt, concat, merge, stack, unstack
+- map, transform, apply, agg, groupby, applymap, filter
+- 다양한 색인 방법
+ . 직접적인 색인
+   - 점색인 df[col]: 컬럼
+   - 순서에 의한 연속색인 df[:i]: 행
+   - fancy색인 df[[col1, col2]]: 컬럼
+   - boolean 색인 df[boolvec]: 행
+ . 간접적인 색인
+   - df.iloc: 순서에 의한 색인
+   - df.loc: 이름에 의한 색인, 논리색인
+
+## 결측 데이터
+값이 없는 데이터. 
+- 파이썬 객체값으로는 np.nan
+- 프린트했을 때 화면에 표시되는 출력값은 NaN
+- 텍스트 파일형식의 원본데이터가 csv 파일인 경우
+  . 'A', 5,,57,83
+
+결측 데이터가 생성되는 원인
+1. 측정되지 않은 경우
+ - 수학시험을 보지 않은 경우: 결측 처리 시 0이 적절
+ - 수학시험을 못 본 경우: 0.(x), 이전학기 평균, 직전점수와 대체
+2. 정보 누락의 경우
+ - 시험지 배달사고
+ - 시험지 오염
+ - 코딩 오류
+3. 측정 대상이 아닌 경우
+
+결측 처리하는 방법
+1. drop: axis를 지정하여 행 또는 열을 제거
+2. fillna: value, ffill, bfill
+3. interpolate: 보간
+
+## 데이터 summary
+1. describe() : 수치형 변수에 대한 통계량
+2. info(): 데이터의 shape, dtypes, 비결측치의 수
+3. 빈도분석: value_counts, np.unique(return_count=True)
+4. 그룹분석: groupby([keys]).agg([f1, f2, ...])
+4. 그룹분석(변수별): groupby([keys]).agg({c1:[f1, f2], c2:[f1, f3], ...])
+
+## 특정 type의 데이터분석을 위한 도구
+1. 문자열 타입의 Series: str.str_method
+2. 시계열 타입의 Series: dt.datetime_method
+   - resampling, rolling
+
+## 데이터를 읽고 쓰기 위한 도구
+- text: read_csv, read_table, read_tsv, read_xls, ..., to_csv
+- pickle: read_pickle, to_pickle
+- hdf5: read_hdf3, to_hdf5
+- slq을 사용하기 위한 패키지들: oracle, mssql, nosql,...
+
+## 시각화 도구들
+- ax=df.plot(kind="..."), ax=s.plot(kind="...")
+- kind: hist, box, pie, bar, hbar, scatter, density
+- subplots, figsize, c, as.set_title, ....
+- seaborn 도구: densityplot, pairplot, jointplot, regplot, gridplot
+
+# 머신러닝 분야
+1. 지도학습(supervised-learning)
+- 정답을 알려주는 학습
+- 정답의 종류
+ .연속된 값: 회귀모델
+ .(순서가 없는)범주화 된 값: 분류모델
+ .순서가 있는 범주화 된 값(서열): 랭킹모델
+2. 비지도학습(unsupervised-learning)
+- 정답이 없는 문제
+- 군집분석 : 데이터들을 유사한 것끼리 집단화
+- 주성분분석 : 데이터들의 정보량을 최대한 보존하면 차원을 축소
+- NMF : 추천 알고리즘에 사용되거나, 원 소스 정보를 예측
+3. 강화학습(reinforcement-learning)
+- 정답은 없지만, 행동에 대한 보상으로 목적을 달성하는 문제
+
+## 회귀모델:
+- 종류
+ .단순 선형회귀
+ .다항 선형회귀
+ .다항 회귀
+- 회귀모형
+y ~ X : formula
+ .타겟 y는 데이터 X에 의해 설명된다.
+ .종속변수 y는 설명변수 X에 의해 설명된다.
+ .y: target, dependent var, label
+ .X: features, independent vars, samples, 
+     observertives, rows, instances
+y = X.w + b + e = yhat + e
+ .y: targets. (n,)
+ .X: features (n, p)
+ .w: weights. learning parameters (p,)
+ .b: bias. intersection. scalar (1,)
+ .e: error. noise (n,)
+y[0] = X[0,:].dot(w) + b + e[0]
+y[1] = X[1,:].dot(w) + b + e[1]
+y[2] = X[2,:].dot(w) + b + e[2]
+...
+y[n] = X[n,:].dot(w) + b + e[n]
+---
+y[0] = X[0,0]*w[0] + ... + X[0,p]*w[p] + b + e[0]
+     = np.sum(X[0]*w) + b + e[0]
+     = X[0].dot(w) + b + e[0]
+y[0] = [X[0.0], X[0,1], ..., X[0,p]].[w[0]] + b + e[0]
+                                     [w[1]]
+                                       ...
+                                     [w[p]]
+y = X.w + b + e = yhat + e
+    yhat = X.w + b
+
+e = y - yhat
+- 전체 error합 최소: argmin_wb : e.sum() = (y - yhat).sum()
+- 전체 error절대값을 최소: argmin_wb : np.abs(e).mean()
+ .mean absolute error(MAE)
+- 전체 error평균거리 최소: argmin_wb : (e**2).mean()
+ .mean squared error(MSE)
+
+## 분류모델:
+y = X.w + b + e
+- y: target. [1, 0]. binary class와 환원이 가능. (n,)
+- X: features (n, p)
+- w: weights (p,)
+- b: bias. scalar. (1,)
+- e: error. noise. (n,)
+[1] Score(y=1) = X.w + b
+- Score(y=1) > 0: 1로 예측하고
+- Score(y=1) < 0: 0으로 예측한다.
+- Support Vector Machine
+- Prob(y=1)을 구할 수 없다.
+[2] Prob(y=1) ~ X.w + b
+- [0, 1] ~ (-inf, +inf)
+- Prob(y=1) = F(X.w + b) = F(Score(y=1))
+ .F: (-inf, +inf) -> (0, 1)
+ .F: 단조증가. if z1 > z2, then F(z1) > F(z2)
+ .F = 1 / (1 + exp(-z)) = Sigmoid(z)
+- Logistic Regression
+ .p = 1/(1 + exp(-(X.w + b)))
+ .1/p = 1 + exp(-(X.w + b))
+ .exp(-(X.w + b)) = 1/p - 1 = (1-p)/p
+ .-(X.w + b) = log((1-p)/p)
+ .X.w + b = log(p/(1-p)) = log(p/q)
+ .exp(X.w+b) = p/q = Prob(y=1)/Prob(y=0): logit
+ .exp(b)*exp(X.w) = p/q
+- cross entropy를 최소화
+ . 무질서도
+   [1, 1, 0, 1, 0,], [0, 0, 1, 0, 1]
+   [1, 1, 1, 1, 1,], [0, 0, 0, 0, 0]
+ . y=[1, 0] yhat = Prob(y=1)
+
+P(y=1) = Sigmoid(X.w + b)
+Likelihood 
+= y * P(y=1) + (1-y) * (1 - P(y=1))
+= P(y=1)^y * (1 - P(y=1))^(1-y)
+
+LogLikelihood
+= y*log(P(y=1) + (1-y)*log(1-P(y=1))
+
+1번째 사건:
+y1 = 1: L = P(y1=1)
+y1 = 0: L = 1 - P(y1=1) = P(y1=0)
+
+2번째 사건:
+y2 = 1: L = P(y2=1)
+y2 = 0: L = 1 - P(y2=1) = P(y2=0)
+
+1, 2번째 사건의 likelihood
+L(1, 2) = L(1)*L(2)
+        = {y1 * P(y1=1) + (1-y1) * (1 - P(y1=1))} *
+          {y2 * P(y2=1) + (1-y2) * (1 - P(y2=1))}
+
+1, 2, n번째 사건의 likelihood
+L(1,...,n) = L(1)*L(2)*...*L(n)
+        = {y1 * P(y1=1) + (1-y1) * (1 - P(y1=1))} *
+          {y2 * P(y2=1) + (1-y2) * (1 - P(y2=1))} *
+          ... *
+          {yn * P(yn=1) + (1-yn) * (1 - P(yn=1))}
+
+LogLikelihood = LL(w, b)
+= log(L(1,...,n))
+
+Loss(w, b) = NLL = -LL(w, b)
+
+## 선형회귀
+### linear regression
+y = X.w + b + e = yhat + e
+yhat = X.w + b 
+     = (X1*w1 + X2*w2 + ... + Xp*wp) + (1*w0) : 1 = np.zeros(n)
+     = X.w
+ - X = np.concatenate([1, X])
+ - w = np.concatenate([b, w])
+
+기본가정은 변수들은 서로 독립적이다. 실제적으로 가정이 이뤄질 수 없다. 변수들이 정보를 공유하고 있는 것이 실제 데이터의 모습이다.
+
+데이터가 가지는 신호 + 잡음을 모두 학습하려는 경향을 가지므로, 잡음을 신호로 학습하지 않도록 규제가 필요.
+
+규제의 2가지 방법:
+- L2 규제: sum|w_i|^2을 손실함수에 추가
+ . Ridge. 정확도를 최적화
+- L1 규제: sum|w_i|을 손실함수에 추가
+ . Lasso. 중요도를 최적화
+- L2+L1 규제: elasticNet. 최적화하기 어렵다. 사용성 X
+
+### 분류기
+타겟 y가 범주형인 경우에 대한 지도학습
+
+y = X.w + b + e
+yhat = X.w + b
+{1, 0} = {-inf ~ inf}
+
+선형회귀 문제를 범주형에 적용하거나, 해석하고자 하는 2가지 방법:
+1. yhat = Score(y=1) = X.w + b : Support Vector Machine(SVM)
+2. yhat = Prob(y=1) = F(X.w + b)
+ - F: Transform Score to Probability
+ - 0 <= P <= 1
+ - 단조증가. if a > b, F(a) > F(b)
+ - Sigmoid(z) = 1 / (1 + exp(-z)) = 1 / (1+exp(-(X.w+b))
+
+
+## Naive Bayes
+### Bayesian Statistics
+A라는 사건이 발생할 확률: 
+ - P(A) ~ n(A) / N
+ - P(A) = lim(N->inf) n(A) / N
+ - 주사위가 있을 때, 발생할 현상들의 집합 = {1,2,3,4,5,6}
+ - 사건은:
+  .주사위의 숫자가 1일 사건 = {1}
+  .주사위의 숫자가 짝수일 사건 A = {2,4,6}
+  .주사위의 숫자가 홀수일 사건 B = {1,3,5}
+  .A와 B는 서로 배반의 사건
+  .주사위의 숫자가 3의 배수일 사건 C = {1,3,6}
+ - 빈도주의 통계학에서는 확률은 결정적(주사위 만들어지면)
+  .P(x=1) = v1 = lim(N->inf) n(x=1) / N
+  ....
+  .P(x=6) = v6 = lim(N->inf) n(x=6) / N
+ - 베이지안 통계학은 매 전사건은 후사건의 확률을 변화시킨다.
+조건부 사건:
+ - 서로 배반이 아닌 사건에서 사건의 선후관계의 의한 확률
+  .P(C|A) : A 사건이 발생했을 때, C 사건이 발생할 확률
+          = P(x in {6})/P(x in {2,4,6})
+          = P(C ∩ A) / P(A)
+          = P(x=6) / [P(x=2) + P(x=4) + P(x=6)]
+          = 299/1800 / [298/1800 + 291/1800 + 299/1800]
+          = 299/888
+       주사위 빈도표
+           1  | 2 | 3 | 4 | 5 | 6 |
+   Freq :  300 298 302 291 310 299
+   P(x) :  1/6  <   >   <   >   <
+  .P(A|C) : C 사건이 발생했을 때, A 사건이 발생할 확률
+          = P(x in {6})/P(x in {1,3,6})
+          = P(A ∩ C) / P(C) => P(A ∩ C) = P(C) * P(A|C)
+          = P(x=6) / [P(x=1) + P(x=3) + P(x=6)]
+          = 299/1800 / [300/1800 + 302/1800 + 299/1800]
+          = 299/901
+  .P(C|A) = P(C ∩ A) / P(A) = P(C) * P(A|C) / P(A)
+- A를 설명변수들인 X로 보고, C를 종속변수인 y로 보면
+  .P(y|X) = P(X|y)/P(X) * P(y) : 베이즈 정리
+   : P(y|X) = prediction. posterior. 사후확률
+   : P(X|y) likelyhood. 우도. 그럴싸함
+   : P(X) = n(X)/N  marginal prob. 주변부확률
+   : P(y) = n(y)/N  prior. 사전확률
+   : y=1|X  label, ground truth. 실제값
+   : 1개를 새로 관찰한 순간, P(X|y), P(X), P(y) 값들이 모두 변경됨.
+  .매 관찰 때마다 확률이 계속 변한다.
+  .복잡한 상호작용이 발생하는 상황에 확률에 대한 근사치를 구할 때 사용.
+- Naive Bayes
+  .X = x1, x2, x3, x4
+   예: sl, sw, pl, pw
+  .순진한가정: x1, x2, x3, x4 들은 서로 독립
+   예: iris에서 꽃받침의 길이는 꽃받침의 너비, 꽃잎의 길이, 꽃잎의 너비와 무관
+   P(y|X) = P(X1|y)*...*P(X4|y)/P(X) * P(y)
+P(X)는 공통이므로 제거하고, y = {0, 1}에 대해 각각 계산하면:
+   P(y=1|X) ∝ P(X1|y=1)*...*P(X4|y=1) * P(y=1)
+   P(y=0|X) ∝ P(X1|y=0)*...*P(X4|y=0) * P(y=0)
+   P(y=1|X) > P(y=0|X) 이며, y=1 prediction. 아니면 y=0 prediction
+feautures의 수 p가 크면, bitwise underflow가 발생하여 log변환하여 계산
+   log(P) ∝ ∑i [log(P(Xi|y))] + log(P(y))
+  .실제와 매우 다르다.
+  .정확도가 일반적으로 낮다.
+  .매우 많은 특성들이 존재할 때, 매우 빠르고, 상당히 괜챦는 정확도를 제공.
+  .자연어를 통한 토픽분석,스팸분석,보이스피싱검출,감성분석,선호도분석,추천
+- Naive Bayes 종류
+  .X가 연속형: 각 x1, ... x4는 독립적인 정규분포를 가정. GaussianNB
+  .X가 binary: 각 x1, ... x4는 독립적인 베르누이분포를 가정. BernoulliNB
+  .X가 category: 각 x1, ... x4는 독립적인 다항분포를 가정. multinormialNB
+
+## Decision Tree(의사결정나무)
+1. 모든 학습셋을 root에 두고
+2. 가장 순수한 집단으로 나눌 수 있는 질문을 던져서 yes는 왼쪽, no는 오른쪽으로 쪼갠다.
+ - 질문을 split point
+ - 질문에 의해 나뉘어진 두 집단을 branch
+ - sp는 각 branch가 최대한 순수한 집단이 될 수 있는 질문을 선택
+ - 부언하면, 질문에 의해 나눠진 집단을 예측할 때, 가장 정확도가 높은 질문
+```
+=====================
+         pred
+       0   |   1
+---------------------
+  0 | *134 |   25
+y -------------------
+  1 |   8  | *259
+=====================
+ Acc(sp1) = 393 / 426 = 91%
+```
+3. 주어진 *제약에 따라 계속 집단을 나누어 leaves를 생성한다.
+ - 첫 집단은 root
+ - 더 이상 나눠지지 않는 집단을 leaf
+ - leaf가 아닌 중간 집단을 branch
+ - *leaf까지의 최대 질문 수를 depth
+ - *number of leaves를 지정
+ - *number of samples in leaf를 지정
+ - *number of samples in split point를 지정
+
+### Kernelized-SVM
+Loss(lr) = CE + α ||w||^2 ~ ||w||^2 + C ∑ξ = Loss(SVM):
+- C = 1/α : 얼마나 많은 slack(ξ)을 포함할꺼냐
+ - low C -> many slack -> wide margin -> under fit
+- low C -> big α -> low w -> low m complexity -> under fit
+- big C -> low α -> bif w -> big m complexity -> over fit
+
+kernel: polynomial, *rbf(exp[-γ|x1 -x2|^2]), sigmoid
+- γ = 1 / σ^2
+- low γ -> big σ -> big Var -> hyperplain smoothing -> under fit
+- big γ -> low σ -> low Var -> hyperplain complex -> over fit
+
+## neural network
+기존의 머신러닝은 입력 피처 x -> yhat : 직접적인 예측
+
+x -> [z:feature transform -> yhat]:
+- feature transform : 특허, 논문 ,지식기반
+- 잘 모르겠지만, AI가 feature transform 까지도 자동화했으면...
+
+자동화된 feature transform:
+- x -> h1 -> h2 -> h3 -> yhat
+- (n,p) -> (n,p1) .. (n,p3) -> (n,)
+- representation learning: x -> h3
+- tuning parameters: # of hidden, p값
+
+learning parameters: 
+- 기존에는 : F(X, w) -> yhat
+- h1 = F1(X, w1) : (p1,) = (p,)(p, p1)
+- h2 = F2(h1, w2): (p2,) = (p1,)(p1,p2)
+- h3 = F3(h2, w3): (p3,) = (p2,)(p2,p3)
+- yhat = F(h3, w): (1,)  = (p3,)(p3,)
+- yhat = F(h3, w): (C,)  = (p3,)(p3,C)
+- Fi: activation function, 활성화함수
+
+주성분분석:
+- p개의 변수가 있는 데이터들은 서로간 독립이 아니며, 노이스를 가지고 있다.
+- 주성분분석은 중복된 정보와 노이즈를 제거한 데이터를 이용하는 방법.
+- p 개중에서 c개의 변수가 독립이고, 노이즈가 없다는 가정.
+- p개의 변수를 StandardScaling하면 전체 분산이 p가 된다.
+- 통계에서는 80% 이상의 분산을 갖는 c개의 주성분을 선택한다.
+ - pca.explained_variance_ratio_.sum() 값이 .8 이상이 되도록 c를 설정
+ - 어떤 c값이 좋은 지는 알 수 없으므로, 다양한 값으로 튜닝이 필요하다.
+- 학습: pca = PCA(c).fit(X_train_scaled)
+- 변환: 
+ - X_train_pca = pca.transform(X_train_scaled)
+ - X_test_pca = pca.transform(X_test_scaled)
+- 예측:
+ - estimater = estimater.fit(X_train_pca, y_train)
+ - score = estimater.score(X_test_pca, y_test)
+ - X_new_pca = pca.transform(X_new_scaled)
+ - ypred = estimater.predcit(X_new_pca)
+
+nmf(non-zero matrix factorization
+- 영화평점과 같이 비음수 값과 결측이 많은 데이터V(u, m)에서 결측값을 추정하는 기술
+- 수천만명의 사용자 u와 수십만의 영화 m에 대한 소수의 평점데이터에서
+- 각 사용자가 영화를 평가하는 소수의 c개의 취향 성분이 있고,
+- 각 영화별로 c개의 취향에 대한 강도를 가지고 있다 가정할 때
+- W(u, c).H(c, m) ~ V(u, m)로 V을 예측하는 W와 H를 생성하는 기술
+- c개의 취향에 대한 정답은 없고, 튜닝해야할 값.
+- 학습: nmf = NMF(c).fit(X_train)
+- 변환: 
+ - W_train = nmf.transform(X_train)
+ - W_test = nmf.transform(X_test)
+- 예측:
+ - estimater = estimater.fit(W_train, y_train)
+ - score = estimater.score(W_test, y_test)
+ - W_new = nmf.transform(W_new)
+ - ypred = estimater.predcit(W_new)
+
+## 딥러닝
+### 모델 개발 방법
+1. 모델 구조정의
+ - Sequential() + add(layer)
+ - model(input=x, output=z) : API 메서드
+ - m.summary()
+2. 모델 컴파일
+ - m.compile(optimizer, loss, metrics)
+3. 모델 학습
+ - m.fit(X_train, y_train)
+4. 모델 평가
+ - m.evaluate(X_test, y_test)
+
+### overfit 발생시
+1. epoch를 줄인다.
+2. hidden의 units을 줄인다.
+3. learning rate를 줄인다.
+4. hidden layer의 수를 줄인다.
+5. L2, L1 규제를 가한다. (O = F(X.w + b))
+ - kernal_regularizer: ||w|| 제한
+ - bias_regularizer: |b|제한
+ - activity_regularizer: ||O|| 제한
+ - deep network에서는 일반적으로 입력단과 출력단에 규제를 가하지 않는다.
+ - 일반적으로 L1 factor는 L2 factor 보다 더 낮은 값을 사용한다.
+  . |w| ~ 0.1 일때
+  . L2loss = a2 * ||w||^2 ~ 0.01 * a2
+  . L1loss = a1 * ||w|| ~ 0.1 * a1
+  . 따라서 위 두 Loss의 기여도를 동등하게 하기 위해서는 a1 < a2 이어야 한다.
+6. Dropout
+ - 일정하게 발생할 수 있는 noise 패턴의 출력 경로를 막는 역할
+ - 각 상위노드들이 서로를 대체하는 역할을 수행
+
+## 딥러닝 모델구성
+1. 모델의 구조와 파라미터를 직접 빌딩
+ - 대량의 데이터를 가지고 데이터로 직접 학습
+ - 이미지, 소리 등의 데이터는 데이터 증식
+2. 사전학습모델을 이용하는 방법
+ - 여러 개발자가 사용하는 일반적인 방법
+ 	- tensorflow hub
+ 	- github에 개발자 공개
+ 	- pytorch hub
+ 	- dataName + modelName
+ - 2가지의 사용방법
+ 	1. VGGconv을 통과한 데이터를 새로운 model의 입력으로 사용하는 방법
+ 	 - Data Augmentation 하기가 어렵다.
+        2. VGGconv를 하나의 layer로 보고, 그 위에 layer를 쌓는 방법
+ 	 - VGGconv는 학습하지 않고, 추가 layer만 학습: transfer learning
+         - VGGconv의 일부를 포함하여, 추가 layer를 학습: fine tuning
+
+## keras를 이용한 딥러닝 모델 생성방법
+1. Sequential 함수를 이용: 모델 생성 후, layer를 추가
+ - m = Sequential() : 비어있는 모델(네트워크, 그래프)을 생성
+ - m.add(layer(...)) : 순서에 따라 layer를 추가
+ - Sequential 이름과 같이 순차적으로 layer를 쌓을 수 있다.
+ - 단방향의 직진성 모델만 생성할 수 있다. 병렬 처리 층은 작성할 수 없다.
+2. model을 이용한 함수형 API 방식: layer 생성 후 model에 입력
+ - x = Input(...) : Input layer를 정의
+ - h = Conv2d(...)(x)
+ - ...
+ - y = Dense(...)(h)
+ - m = model(inputs=x, outputs=y)
+ - 높은 자유도를 가지며, 매우 복잡한 모델(네트워크, 그래프)를 생성할 수 있다.
+
+## 특정 filter w가 이미지의 어떤 내용을 추출하는 지 알기 위해:
+w에 매핑되는 activation을 증가시키는 이미지를 생성하자.
+- 기존 학습단계(학습데이터 X는 과거의 데이터로 상수, w는 학습할 변수)
+ - 잘못 분류하는 정도를 나타내는 Loss를 줄이기 위해:
+ - w = w - lr*(dLoss(w)/dw) : 학습필터 w를 업데이트 과정
+- 학습된 w는 상수, w에 매핑된 activation을 증가시키는 이미지 X는 변수
+ - Hjk: j번째 layer의 k번째 필터(w)에 의한 출력(activation)이라 할때
+ - X = X + lr*(dHjk(X)/dw) : 입력 이미지 X를 업데이트 과정
+
+
+<학습데이터를 이용한 모델링 과정>
+
+X, y  [ .......................................................... ]
+X_tr, y_tr [ ............................. ]
+X_te, y_te [ .......... ]
+
+w <= X_tr, y_tr : 학습
+C <= X_te, y_te : 튜닝. 선택
+
+----------------------------------------------------
+
+X, y  [ .......................................................... ]
+X_tr, y_tr [ ........................ ]
+X_val, y_val [ ........ ]
+X_te, y_te [ ........ ]
+
+knn : model1
+w1 <= X_tr, y_tr : 학습
+C1 <= X_val, y_val : 튜닝. 선택
+Acc1 <= X_te, y_te : 일반화된 성능 측정
+
+
+lr : model2
+w2 <= X_tr, y_tr : 학습
+C2 <= X_val, y_val : 튜닝. 선택
+Acc2 <= X_te, y_te : 일반화된 성능 측정
+
+
+DT : model3
+w3 <= X_tr, y_tr : 학습
+C3 <= X_val, y_val : 튜닝. 선택
+Acc3 <= X_te, y_te : 일반화된 성능 측정
+
+
+svm : model4
+w4 <= X_tr, y_tr : 학습
+C4 <= X_val, y_val : 튜닝. 선택
+Acc4 <= X_te, y_te : 일반화된 성능 측정
+
+...
+...
+...
+
+
+<모델에 대한 운영 전략>
+1. 자원이 많고, 시간적인 여유, 인력도 충분
+ms = [model1, ..., model9]
+yhats = []
+for m in ms:
+   yhat = m.predict(Xnew)
+   yhats.append(yhat)
+ypred = mean(yhats) # stacking models
+
+2. 반대되는 case
+X_te, y_te => bestM 선택
+ypred = bestM.predict(Xnew)
+
+
+# 프로젝트 안내
+1. 강의중 배운 내용을 가지고,
+ - 여러분이 가지고 계신 data가 있다면, 이를 활용하여 모델을 생성, 튜닝
+ - jupyter notebook으로 올린다.
+2. 실전 소스코드 모음집을 이용한다.
+ - data + 분석 code
+ - 주석을 달고, 여러분의 독창적인 시도, 결과 피트백을 작성
+ - jupyter notebook으로 올린다.
+3. 담주 월요일까지 ...
+
+<모델에 대한 운영 전략>
+1. 자원이 많고, 시간적인 여유, 인력도 충분
+ms = [model1, ..., model9]
+yhats = []
+for m in ms:
+   yhat = m.predict(Xnew)
+   yhats.append(yhat)
+ypred = mean(yhats) # stacking models
+
+2. 반대되는 case
+X_te, y_te => bestM 선택
+ypred = bestM.predict(Xnew)
+
+## colabs pyplot에서 한글 사용하기
+1. 관련 패키지 설치
+```bash
+!sudo apt-get install -y fonts-nanum
+!sudo fc-cache -fv
+!rm ~/.cache/matplotlib -rf
+```
+2. 런타임 재 실행
+3. pyplot 폰트 지정
+```python
+import matplotlib.pyplot as plt
+plt.rc('font', family='NanumBarunGothic') 
+```
+

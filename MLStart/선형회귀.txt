@@ -1,0 +1,27 @@
+선형회귀
+y = x.w +b+e
+=yhat+e
+yhat = x.w +b
+=X.w+1*w0
+
+-y.shape = (n,p)
+-w.shape(p, )
+yhat = X,w
+- X.shape(n, p+1)
+- w.shape(p+1)
+- X = (1, X)
+- w = (w0, w1, ... ,wp)
+분류문제에 활용
+y = X.w + e
+{1, 0} = (-inf, inf)
+1. svm : yhat = X,w = X.w +b
+-score(y=1) = X,w
+-score(y=1) = yhat > 0 : y =1로 예측
+-score(y=1) = yhat > 0 : y =0로 예측
+2. logistic Regressioon
+- Prob(y = 1) = yhat = X.w
+-F의 제약사항
+.if z1>ze, then f(z1)>F(z2) : 단조증가
+.if z ->-inf, then F(z) > F(z)  ~ 0, Prob(y = 1) ~ 0
+.if z ->-inf, then F(z) > F(z)  ~ 0, Prob(y = 1) ~ 1
+F(z) = sigmoid(z) = 1 / (1+e^{-z})
